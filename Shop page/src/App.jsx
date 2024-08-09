@@ -3,14 +3,17 @@ import './App.css'
 
 function Tile(props) {
   return (
-    <li className="tile">
+    <div className="tile">
       <h2>{props.name}</h2>
-  </li>
+  </div>
   )
 } 
 function App() {
   return (
     <div className="container">
+      <div className="btnDiv">
+          <button className="offerBtn">Add</button>
+      </div>
     <div className="tileDiv">
       <Tile 
       name="Electronics and AGD"
@@ -24,8 +27,6 @@ function App() {
       <Tile 
       name="Streaming platform"
       />
-    </div>
-    <div className="tileDiv">
       <Tile 
       name="Games"
       />
@@ -36,7 +37,7 @@ function App() {
       name="Sport"
       />
       <Tile 
-      name="Other"
+      name="Cosmetics"
       />
     </div>
     </div>
