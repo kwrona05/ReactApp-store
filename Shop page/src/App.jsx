@@ -4,33 +4,41 @@ import './App.css'
 function Tile(props) {
   return (
     <li className="tile">
-  <img src={props.img} alt={props.title}></img>
-  <h3>{props.title}</h3>
-  <p>{props.date}</p>
-  <p>{props.sale}</p>
-  <p>{props.details}</p>
+      <h2>{props.name}</h2>
   </li>
   )
 } 
 function App() {
   return (
-    <div>
-      <div>
-      <p>Electronic</p>
-      <p>Food and drinks</p>
-      <p>Furniture</p>
-      </div>
+    <div className="container">
+    <div className="tileDiv">
       <Tile 
-      title="Snickers"
-      date="To 10.08.2024"
-      sale="40%"
-      details="You have to buy two snacks"
+      name="Electronics"
       />
       <Tile 
-      title="Iphone"
-      date="-"
-      sale="20%"
-      details="If you are a student you have 20% off on Ispot" />
+      name="Food and drinks"
+      />
+      <Tile 
+      name="Furnitures"
+      />
+      <Tile 
+      name="Streaming platform"
+      />
+    </div>
+    <div className="tileDiv">
+      <Tile 
+      name="Games"
+      />
+      <Tile 
+      name="Books"
+      />
+      <Tile 
+      name="Sport"
+      />
+      <Tile 
+      name=""
+      />
+    </div>
     </div>
   )
 }
