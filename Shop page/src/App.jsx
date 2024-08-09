@@ -13,7 +13,7 @@ function App() {
     <div className="container">
     <div className="tileDiv">
       <Tile 
-      name="Electronics"
+      name="Electronics and AGD"
       />
       <Tile 
       name="Food and drinks"
@@ -36,7 +36,7 @@ function App() {
       name="Sport"
       />
       <Tile 
-      name=""
+      name="Other"
       />
     </div>
     </div>
