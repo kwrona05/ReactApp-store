@@ -2,23 +2,60 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
 .container {
 display: flex;
 flex-direction: column;
-gap: 40px;
 justify-content: center;
-align-items: center;
 width: 100%;
-height: 100%;
 }
 .tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  word-wrap: normal;
   border: 1px solid black;
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 }
 
 .tileDiv {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 40px;
+  margin-top: 40px;
+}
+
+@media (min-width: 500px) and (max-width: 745px) {
+  .tileDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (min-width: 745px) and (max-width: 991px) {
+  .tileDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (min-width: 991px) {
+  .tileDiv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+}
+
+.btnDiv {
+padding: 20px;
+}
+
+.offerBtn {
+  border: 1px solid black;
 }
