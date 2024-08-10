@@ -11,9 +11,11 @@ function Tile(props) {
 function App() {
   return (
     <div className="container">
+    <div className="header">
       <div className="btnDiv">
           <button className="offerBtn">Add</button>
       </div>
+    </div>
     <div className="tileDiv">
       <Tile 
       name="Electronics and AGD"
