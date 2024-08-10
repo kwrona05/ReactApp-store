@@ -58,4 +58,20 @@ padding: 20px;
 
 .offerBtn {
   border: 1px solid black;
+  background-color: #FAFAD2;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: #FFD700;
+  width: 1440px;
+  border-bottom: 8px solid #FF8C00;
+  border-left: 4px solid #FF8C00;
+  border-right: 4px solid #FF8C00;
+  border-top: 2px solid #FF8C00;
+}
+
+button:hover {
+  border-color: #FF8C00;
 }
