@@ -1,4 +1,5 @@
-import React from "react"
+import React, { Suspense, lazy } from "react"
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css'
 
 function Tile(props) {
@@ -8,12 +9,22 @@ function Tile(props) {
   </div>
   )
 } 
+const Home = lazy(() => import('./Home'))
+const Electronic = lazy(() => import('./Electronic'))
+const Food = lazy(() => import('./Food'))
+const Furniture = lazy(() => import('./Furniture'))
+const StreamingPlatform = lazy(() => import('./StreamingPlatform'))
+const Game = lazy(() => import('./Game'))
+const Book = lazy(() => import('./Book'))
+const Sport = lazy(() => import('./Sport'))
+const Cosmetic = lazy(() => import('./Cosmetic'))
+
 function App() {
   return (
     <div className="container">
     <div className="header">
       <div className="btnDiv">
-          <button className="offerBtn">Add</button>
+        <button className="offerBtn">Add</button>
       </div>
     </div>
     <div className="tileDiv">
