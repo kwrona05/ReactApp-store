@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+body {
+background-color: #FFDAB9;
+}
+
 .container {
 display: flex;
 flex-direction: column;
@@ -19,6 +23,7 @@ width: 100%;
   border: 1px solid black;
   width: 100%;
   height: 100%;
+  background-color: #FFFFE0;
 }
 
 .tileDiv {
@@ -64,7 +69,7 @@ padding: 20px;
 .header {
   display: flex;
   justify-content: center;
-  background-color: #FFD700;
+  background-color: #E0FFFF;
   width: 1440px;
   border-bottom: 8px solid #FF8C00;
   border-left: 4px solid #FF8C00;
