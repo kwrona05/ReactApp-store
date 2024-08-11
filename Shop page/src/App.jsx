@@ -9,7 +9,6 @@ function Tile(props) {
   </div>
   )
 } 
-const Home = lazy(() => import('./Home'))
 const Electronic = lazy(() => import('./Electronic'))
 const Food = lazy(() => import('./Food'))
 const Furniture = lazy(() => import('./Furniture'))
