@@ -1,59 +1,61 @@
-import React, { Suspense, lazy } from "react"
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './App.css'
+import './App.css';
 
-function Tile(props) {
+const Electronic = lazy(() => import('./Electronic'));
+const Food = lazy(() => import('./Food'));
+const Book = lazy(() => import('./Book'));
+const Furniture = lazy(() => import('./Furniture'))
+const Game = lazy(() => import('./Game'))
+const Sport = lazy(() => import('./Sport'))
+const StreamingPlatform = lazy(() => import('./StreamingPlatform'))
+const Cosmetic = lazy(() => import('./Cosmetic'))
+
+function Tile({ name, path }) {
   return (
     <div className="tile">
-      <h2>{props.name}</h2>
-  </div>
-  )
+      <Link to={path}>
+        <h2>{name}</h2>
+      </Link>
+    </div>
+  );
 }
-const Electronic = lazy(() => import('./Electronic'))
-const Food = lazy(() => import('./Food'))
-const Furniture = lazy(() => import('./Furniture'))
-const StreamingPlatform = lazy(() => import('./StreamingPlatform'))
-const Game = lazy(() => import('./Game'))
-const Book = lazy(() => import('./Book'))
-const Sport = lazy(() => import('./Sport'))
-const Cosmetic = lazy(() => import('./Cosmetic'))
 
 function App() {
   return (
-    <div className="container">
-    <div className="header">
-      <div className="btnDiv">
-        <button className="offerBtn">Add</button>
+    <Router>
+      <div className="container">
+        <div className="header">
+          <div className="btnDiv">
+            <button className="offerBtn">Add</button>
+          </div>
+        </div>
+        <div className="tileDiv">
+          <Tile name="Electronics and AGD" path="/electronics" />
+          <Tile name="Food and drinks" path="/food" />
+          <Tile name="Furnitures" path="/furniture" />
+          <Tile name="Streaming platform" path="/streaming" />
+          <Tile name="Games" path="/games" />
+          <Tile name="Books" path="/books" />
+          <Tile name="Sport" path="/sport" />
+          <Tile name="Cosmetics" path="/cosmetics" />
+        </div>
+        
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/electronics" element={<Electronic />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/furniture" element={<Furniture />} />
+            <Route path="/streaming" element={<StreamingPlatform />} />
+            <Route path="/games" element={<Game />} />
+            <Route path="/books" element={<Book />} />
+            <Route path="/sport" element={<Sport />} />
+            <Route path="/cosmetics" element={<Cosmetic />} />
+          </Routes>
+        </Suspense>
       </div>
-    </div>
-    <div className="tileDiv">
-      <Tile 
-      name="Electronics and AGD"
-      />
-      <Tile 
-      name="Food and drinks"
-      />
-      <Tile 
-      name="Furnitures"
-      />
-      <Tile 
-      name="Streaming platform"
-      />
-      <Tile 
-      name="Games"
-      />
-      <Tile 
-      name="Books"
-      />
-      <Tile 
-      name="Sport"
-      />
-      <Tile 
-      name="Cosmetics"
-      />
-    </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
